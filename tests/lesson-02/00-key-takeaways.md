@@ -54,4 +54,8 @@ git status
 ```
 git log
 ```
-
+### 3.3 Push code lên git
+```
+git remote add origin <repo-url>
+git push origin main
+```
