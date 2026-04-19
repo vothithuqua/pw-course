@@ -1,11 +1,11 @@
 1. git commit --amend 
-=> S?a l?i commit g?n nh?t (commit cu?i c?ng)
+=> Sửa lại commit gần nhất (commit cuối cùng)
 
-2. git commit --amend -m"?message>"
-=> S?a commit g?n nh?t v? s?a message
+2. git commit --amend -m"<message>"
+=> Sửa commit gần nhất và thay luôn message
 
 3. git restore --staged < file>
-=> B? file kh?i staging area (undo git add)
+=> Bỏ file khỏi staging area (undo git add)
 
 4. git reset HEAD~1
-=> Quay l?i 1 commit tr??c ??
+=> Quay lại 1 commit trước đó
