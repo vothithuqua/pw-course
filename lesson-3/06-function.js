@@ -1,9 +1,10 @@
 // Bài 1
 function multiply(a, b) {
-    console.log(`Kết quả của ${a} * ${b} = ${a * b}`);
+      return a * b;
 }
-multiply(2, 3);
-multiply(4, 5);
+console.log(`Kết quả của a * b = ${multiply(2, 3)}`);
+console.log(`Kết quả của a * b = ${multiply(4, 5)}`);
+
 
 // Bài 2
 function findMin(a, b, c) {
@@ -14,10 +15,10 @@ function findMin(a, b, c) {
     if (c < min) {
         min = c;
     }
-    console.log("Giá trị nhỏ nhất trong dãy số là", min);
+    return min;
 }
-findMin(10, 9, 4);
-findMin(8, 5, 7);
+console.log("Giá trị nhỏ nhất trong dãy số là", findMin(10, 9, 4));
+console.log("Giá trị nhỏ nhất trong dãy số là", findMin(8, 5, 7));
 
 // Bài 3
 const students = [
@@ -40,8 +41,8 @@ console.log(getTopStudents(students, 8));
 
 // Bài 4
 function calculateInterest(principal, rate, years) {
-    let total = principal + (principal * rate *years) / 100;
+    let total = principal + (principal * rate * years) / 100;
     return total;
 }
-const tongtien = calculateInterest(50000000,10,5);
-console.log("Tổng tiền là: ",tongtien );
+const tongtien = calculateInterest(50000000, 10, 5);
+console.log("Tổng tiền là: ", tongtien);
