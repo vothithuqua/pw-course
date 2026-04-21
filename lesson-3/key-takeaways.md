@@ -27,6 +27,50 @@ Dùng khi đã chạy `git commit` nhưng muốn quay lại để sửa đổi t
     git reset HEAD~2
     ```
 
+## 3. Git Amend
+
+#### 3.1 Sửa đổi commit gần nhất
+```
+git commit --amend
+```
+
+##### Note: sửa trong chế độ VIM
+- Bấm I để hiện chữ insert -> sửa commit
+- Sau khi sửa xong thì bấm esc để thoát
+- Tiếp tục gõ lệnh: `:wq`
+
+#### 3.2 Thêm file, Sửa đổi commit gần nhất và thay đổi message
+
+```
+git add <ten_file>
+git commit --amend -m"<Nội dung message>"
+```
+#### 3.3 Thêm file vào commit cuối cùng
+```
+git add <ten_file>
+git commit --amend --no--edit //Giữ nguyên message cũ cuối cùng
+```
+##### Note: Đưa thêm file từ vùng Staging -> Repository nhưng không muốn sửa nội dung commit
+
+#### 3.4 Bỏ file khỏi commit cuối cùng
+```
+git reset HEAD~file_to_remove
+git commit --amend --no--edit
+```
+
+###Cách hoạt động bên trong
+Khi bạn chạy `git commit --amend`, Git thực chất:
+1. Lấy nội dung của commit cuối (parent, tree, author)
+2. Kết hợp với staging area hiện tại
+3. Tạo một **commit mới với hash khác** thay thế commit cũ
+4. Commit cũ vẫn tồn tại trong reflog nhưng không còn trên branch
+
+```
+Trước amend:                 Sau amend:
+
+A -- B -- C                  A -- B -- C' (C' thay thể C, hash khác) 
+```
+
 ---
 
 # 🌿 Branching trong Git
