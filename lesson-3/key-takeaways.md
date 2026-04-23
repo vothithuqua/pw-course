@@ -5,13 +5,13 @@
 Dùng khi đã chạy lệnh `git add` nhưng chưa `git commit` và muốn đưa file ra khỏi danh sách chuẩn bị.
 
 * **Restore cụ thể một file:**
-    ```
+    ```bash
     git restore --staged <file_name>
     ```
 * **Restore toàn bộ các file:**
-    ```
+```bash
     git restore --staged .
-    ```
+```
 
 
 
@@ -19,18 +19,18 @@ Dùng khi đã chạy lệnh `git add` nhưng chưa `git commit` và muốn đư
 Dùng khi đã chạy `git commit` nhưng muốn quay lại để sửa đổi thêm mà không làm mất nội dung đã viết.
 
 * **Cú pháp tổng quát:**
-    ```
+```bash
     git reset HEAD~<số_commit>
-    ```
+```
 * **Ví dụ: Hủy 2 commit gần nhất:**
-    ```
+```bash
     git reset HEAD~2
-    ```
+```
 
 ## 3. Git Amend
 
 #### 3.1 Sửa đổi commit gần nhất
-```
+```bash
 git commit --amend
 ```
 
@@ -41,19 +41,19 @@ git commit --amend
 
 #### 3.2 Thêm file, Sửa đổi commit gần nhất và thay đổi message
 
-```
+```bash
 git add <ten_file>
 git commit --amend -m"<Nội dung message>"
 ```
 #### 3.3 Thêm file vào commit cuối cùng
-```
+```bash
 git add <ten_file>
 git commit --amend --no--edit //Giữ nguyên message cũ cuối cùng
 ```
 ##### Note: Đưa thêm file từ vùng Staging -> Repository nhưng không muốn sửa nội dung commit
 
 #### 3.4 Bỏ file khỏi commit cuối cùng
-```
+```bash
 git reset HEAD~file_to_remove
 git commit --amend --no--edit
 ```
@@ -65,7 +65,7 @@ Khi bạn chạy `git commit --amend`, Git thực chất:
 3. Tạo một **commit mới với hash khác** thay thế commit cũ
 4. Commit cũ vẫn tồn tại trong reflog nhưng không còn trên branch
 
-```
+```bash
 Trước amend:                 Sau amend:
 
 A -- B -- C                  A -- B -- C' (C' thay thể C, hash khác) 
@@ -77,20 +77,20 @@ A -- B -- C                  A -- B -- C' (C' thay thể C, hash khác)
 
 ## 1. Tạo branch
 
-```
+```bash
     git branch <ten_nhanh>
 ```
 
 ## 2. Di chuyển sang branch
 
-``` 
+```bash
 git checkout <ten_nhanh>
 ```
 
 
 #### 🔍 Kiểm tra branch hiện tại
 
-```
+```bash
 git branch
 ```
 👉 Branch đang đứng sẽ có dấu *
@@ -98,12 +98,12 @@ git branch
 
 #### 🚀 Tạo branch + chuyển luôn
 
- ```
+ ```bash
 git checkout -b <ten_nhanh>
  ```
 
 ## 3. Xoá branch
- ```
+ ```bash
     git branch -D <ten_nhanh> 
  ```
 ##### ⚠️ Lưu ý:
@@ -111,7 +111,7 @@ git checkout -b <ten_nhanh>
 - Không được đứng ở branch cần xoá
 - Nên chuyển sang branch khác (main/develop) trước
 
-```
+```bash
 git checkout main
 git branch -D <ten_nhanh>
 ```
@@ -125,7 +125,7 @@ git branch -D <ten_nhanh>
 
 #### Trong dự án có nhiều file không cần thiết phải commit lên Git
 
-```
+```bash
     - File tạm thời của hệ điều hành (.DS_Store, Thumbs.db)
     - Thư mục dependencies (node_modules/, vendor/)
     - File build và artifacts (dist/, build/, .exe)
@@ -139,7 +139,7 @@ git branch -D <ten_nhanh>
 ##### 1. Tạo file .gitignore
 
 ##### 2. Thêm file/folder cần ignore
-```
+```bash
 # Ví dụ
 node_modules/
 dist/
@@ -149,7 +149,7 @@ dist/
 
 ##### 3. Git sẽ tự động bỏ qua
 
-```
+```bash
 Các file được khai báo trong .gitignore sẽ không được add vào Git
 ```
 
@@ -164,7 +164,7 @@ Các file được khai báo trong .gitignore sẽ không được add vào Git
 - 👉 Các từ viết thường, nối với nhau bằng dấu `_`
 
 **Ví dụ:**
-```
+```bash
 thu_qua
 user_name
 ```
@@ -173,7 +173,7 @@ user_name
 - 👉 Các từ viết thường, nối với nhau bằng dấu `-`
 
 **Ví dụ:**
-```
+```bash
 thu-qua
 user-name
 ```
@@ -182,7 +182,7 @@ user-name
 - 👉 Viết thường chữ đầu, các từ sau viết hoa chữ cái đầu
 
 **Ví dụ:**
-```
+```bash
 thuQua
 userName
 ```
@@ -191,7 +191,7 @@ userName
 - 👉 Mỗi từ đều viết hoa chữ cái đầu
 
 **Ví dụ:**
-```
+```bash
 ThuQua
 UserName
 ```
@@ -201,7 +201,7 @@ UserName
 - 👉 Các từ nối với nhau bằng dấu `_`
 
 **Ví dụ:**
-```
+```bash
 THU_QUA
 USER_NAME
 ```
@@ -220,13 +220,13 @@ USER_NAME
 ### 2.1 Console.log
 
 #### Sử dụng nháy đơn, nháy kép
-```
+```bash
 console.log('Toi la Thu Qua')
 console.log("Toi la Thu Qua")
 ```
 #### Sử dụng kèm variable
 
-```
+```bash
 let name = "Thu Qua"
 console.log(`Toi la ${name}`)
 ```
@@ -237,7 +237,7 @@ console.log("Toi ten la" + name + " ")
 
 ### 2.2 Object
 #### Cú pháp
-```
+```bash
 const myInfo = {
     "name": "Thu Qua",
     address: "Da Nang", // nên dùng
@@ -249,7 +249,7 @@ const myInfo = {
 - Sử dụng dấu chấm: Nếu key không chứa dấu chấm, ký tự đặc biệt
 - Sử dụng dấu ngoặc vuông: Nếu key chứa dấu chấm, ký tự đặc biệt
 
-```
+```bash
 console.log(myInfo.name);
 console.log(myInfo.["name"]);
 ```
@@ -267,13 +267,13 @@ console.log(myInfo.["name"]);
     - Lấy phần tử theo index: [0], [1]
 
 ### 2.4 Function
-```
+```bash
 Function = Hàm
 Đoạn code dùng đi dùng lại
 ```
 
 #### Ví dụ
-```
+```bash
 const dai = 5;
 const rong = 10;
 
