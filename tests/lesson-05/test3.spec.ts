@@ -2,6 +2,7 @@ import { test } from '@playwright/test';
 
 test('Product page', async ({ page }) => {
     test.setTimeout(120000);
+    
     await test.step('Navigate to material website', async () => {
         await page.goto("https://material.playwrightvn.com/");
     });

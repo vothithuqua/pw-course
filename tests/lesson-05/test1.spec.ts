@@ -1,6 +1,7 @@
 import { expect, test } from '@playwright/test';
 
 test('Register page', async ({ page }) => {
+
     await test.step('Navigate to material website', async () => {
         await page.goto("https://material.playwrightvn.com/");
     });
