@@ -21,6 +21,7 @@ test('Product page', async ({ page }) => {
 
         for (let i = 99; i >= 1; i -= 2) {
             await page.locator(`(//button[contains(text(),"Delete")])[${i}]`).click();
+            await page.waitForTimeout(300);
         }
     });
 });
