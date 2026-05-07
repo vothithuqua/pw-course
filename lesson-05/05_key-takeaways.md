@@ -59,7 +59,7 @@ setTimeout(function () {
 ---
 
 # 🌐 DOM (Document Object Model)
-![image_DOM](./images/DOM.png)
+![image_DOM](../images/DOM.png)
 
 ---
 
