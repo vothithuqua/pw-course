@@ -1,6 +1,7 @@
 import { test } from '@playwright/test';
 
 test('Product page', async ({ page }) => {
+    test.setTimeout(120000);
     await test.step('Navigate to material website', async () => {
         await page.goto("https://material.playwrightvn.com/");
     });
@@ -17,11 +18,9 @@ test('Product page', async ({ page }) => {
     });
 
     await test.step('Delete todo item le', async () => {
-        page.on('dialog', async dialog => await dialog.accept());
-
         for (let i = 99; i >= 1; i -= 2) {
+            page.once('dialog', async dialog => await dialog.accept());
             await page.locator(`(//button[contains(text(),"Delete")])[${i}]`).click();
-            await page.waitForTimeout(300);
         }
     });
 });
