@@ -15,9 +15,7 @@ test('Product page', async ({ page }) => {
     });
 
     await test.step('Add 3 product 2', async () => {
-        await page.locator("//button[@data-product-id='2']").click();
-        await page.locator("//button[@data-product-id='2']").click();
-        await page.locator("//button[@data-product-id='2']").click();
+        await page.locator("//button[@data-product-id='2']").click({ clickCount: 3 });
     });
 
     await test.step('Add 3 product 2', async () => {
